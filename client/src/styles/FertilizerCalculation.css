@@ -1,0 +1,348 @@
+/* Main Container Styles */
+.calculator-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #166534; /* Green-800 */
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .calculator-grid {
+    grid-template-columns: 1.5fr 2fr;
+  }
+}
+
+/* Crop Selector Styles */
+.crop-selector {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #15803d; /* Green-700 */
+}
+
+.search-container {
+  margin-bottom: 16px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db; /* Gray-300 */
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.crops-list {
+  height: 800px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.crop-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-color: #f3f4f6; /* Gray-100 */
+}
+
+.crop-item:hover {
+  background-color: #e5e7eb; /* Gray-200 */
+}
+
+.crop-item.selected {
+  background-color: #dcfce7; /* Green-100 */
+  border: 1px solid #22c55e; /* Green-500 */
+}
+
+.crop-image {
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #e5e7eb; /* Gray-200 */
+}
+
+.crop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.crop-info {
+  flex-grow: 1;
+}
+
+.crop-name {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.crop-npk {
+  font-size: 12px;
+  color: #6b7280; /* Gray-500 */
+}
+
+/* Calculator Main Section */
+.calculator-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.calculation-panel, .info-panel {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .input-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563; /* Gray-600 */
+  margin-bottom: 4px;
+}
+
+.text-input, .select-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db; /* Gray-300 */
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.select-input {
+  background-color: white;
+}
+
+.no-crop-message {
+  padding: 16px;
+  background-color: #fef3c7; /* Yellow-100 */
+  color: #92400e; /* Yellow-800 */
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+/* Results Styles */
+.results-container {
+  margin-top: 16px;
+}
+
+.results-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.area-info {
+  margin-bottom: 24px;
+}
+
+.area-text {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.bold-text {
+  font-weight: 500;
+}
+
+.npk-grid, .fertilizer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .npk-grid, .fertilizer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.npk-item, .fertilizer-item {
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.npk-title, .fertilizer-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.npk-value, .fertilizer-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* NPK Color Styles */
+.nitrogen {
+  background-color: #eff6ff; /* Blue-50 */
+}
+
+.nitrogen .npk-title {
+  color: #1e40af; /* Blue-800 */
+}
+
+.nitrogen .npk-value {
+  color: #1e3a8a; /* Blue-900 */
+}
+
+.phosphorus {
+  background-color: #f5f3ff; /* Purple-50 */
+}
+
+.phosphorus .npk-title {
+  color: #6b21a8; /* Purple-800 */
+}
+
+.phosphorus .npk-value {
+  color: #581c87; /* Purple-900 */
+}
+
+.potassium {
+  background-color: #fef2f2; /* Red-50 */
+}
+
+.potassium .npk-title {
+  color: #b91c1c; /* Red-800 */
+}
+
+.potassium .npk-value {
+  color: #7f1d1d; /* Red-900 */
+}
+
+/* Fertilizer Color Styles */
+.fertilizer-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.urea {
+  background-color: #dcfce7; /* Green-100 */
+}
+
+.urea .fertilizer-name {
+  color: #166534; /* Green-800 */
+}
+
+.urea .fertilizer-value {
+  color: #14532d; /* Green-900 */
+}
+
+.dap {
+  background-color: #fef9c3; /* Yellow-100 */
+}
+
+.dap .fertilizer-name {
+  color: #854d0e; /* Yellow-800 */
+}
+
+.dap .fertilizer-value {
+  color: #713f12; /* Yellow-900 */
+}
+
+.mop {
+  background-color: #ffedd5; /* Orange-100 */
+}
+
+.mop .fertilizer-name {
+  color: #9a3412; /* Orange-800 */
+}
+
+.mop .fertilizer-value {
+  color: #7c2d12; /* Orange-900 */
+}
+
+/* Fertilizer Info Styles */
+.fertilizer-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fertilizer-info-item {
+  border-left: 4px solid #22c55e; /* Green-500 */
+  padding-left: 12px;
+}
+
+.fertilizer-info-title {
+  font-weight: 700;
+  color: #166534; /* Green-800 */
+  margin-bottom: 4px;
+}
+
+.fertilizer-info-text {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.application-tips {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #eff6ff; /* Blue-50 */
+  border-radius: 8px;
+}
+
+.tips-title {
+  font-weight: 600;
+  color: #1e40af; /* Blue-800 */
+  margin-bottom: 8px;
+}
+
+.tips-list {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.tips-list li {
+  margin-bottom: 8px;
+}

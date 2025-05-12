@@ -1,0 +1,36 @@
+:root {
+    --primary: #2E7D32;
+    --secondary: #81C784;
+    --accent: #4CAF50;
+    --light: #E8F5E9;
+    --dark: #1B5E20;
+    --text-dark: #212121;
+    --text-light: #FFFFFF;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+  }
+  *::selection{
+    background-color: #1B5E20;
+    color:aliceblue;
+  }
+  
+  body {
+    background-color: #F5F5F5;
+    color: var(--text-dark);
+  }
+  
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  button {
+    cursor: pointer;
+  }

@@ -1,0 +1,986 @@
+/* Enhanced weather.css for Smart Farming Dashboard */
+
+.dashboard-container {
+  max-width: 1300px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  background-color: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-header {
+  padding: 1.5rem 0;
+}
+
+.dashboard-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.field-info-header {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.field-location, .field-size {
+  display: inline-flex;
+  align-items: center;
+}
+
+.field-location::before {
+  content: "📍";
+  margin-right: 0.5rem;
+}
+
+.field-size::before {
+  content: "📏";
+  margin-right: 0.5rem;
+}
+
+.refresh-info {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1296a0;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.refresh-button {
+  background-color: #3498db;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
+}
+
+.refresh-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4);
+}
+
+/* Improved Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #f1f1f1;
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.card h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #3498db;
+}
+
+.card h3 {
+  color: #34495e;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+/* Redesigned Card Positioning */
+.weather-card {
+  grid-column: span 4;
+  grid-row: 1;
+  background: linear-gradient(to bottom right, #fff, #f7fbfe);
+  border-left: 4px solid #3498db;
+}
+
+.env-data-card {
+  grid-column: span 8;
+  grid-row: 1;
+  background: linear-gradient(to bottom right, #fff, #f7fefc);
+  border-left: 4px solid #27ae60;
+}
+
+/* Moved Air Quality Card Up */
+.air-quality-card {
+  grid-column: span 4;
+  grid-row: 2;
+  background: linear-gradient(to bottom right, #fff, #fdfbfe);
+  border-left: 4px solid #9b59b6;
+}
+
+/* Gas Monitoring Card */
+.gas-monitoring-card {
+  grid-column: span 8;
+  grid-row: 2;
+  background: linear-gradient(to bottom right, #fff, #fef8f1);
+  border-left: 4px solid #e67e22;
+}
+
+/* Recommendation Card */
+.recommendation-card {
+  grid-column: span 12;
+  grid-row: 3;
+  background: linear-gradient(to bottom right, #fff, #fcfffe);
+  border-left: 4px solid #16a085;
+}
+
+/* Enhanced Weather Section */
+.weather-details h3 {
+  color: #34495e;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+}
+
+.weather-icon {
+  width: 80px;
+  height: 80px;
+  margin-right: 1.5rem;
+  object-fit: contain;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e6e6e6;
+}
+
+.weather-data {
+  flex: 1;
+}
+
+.weather-data p {
+  margin: 0.9rem 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #f1f1f1;
+  padding-bottom: 0.6rem;
+}
+
+.label {
+  font-weight: 600;
+  color: #7f8c8d;
+}
+
+.value {
+  font-weight: 500;
+}
+
+/* Improved Sensor Data Visualization */
+.sensor-parameters {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+.air-parameters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+.gas-parameters {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+.sensor-item {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.sensor-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.environmental-item {
+  border-left: 4px solid #27ae60;
+}
+
+.gas-item {
+  border-left: 4px solid #e67e22;
+}
+
+.air-quality-item {
+  border-left: 4px solid #9b59b6;
+}
+
+.sensor-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.sensor-name {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 1rem;
+}
+
+.sensor-value {
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Gauge Styling */
+.sensor-gauge {
+  height: 12px;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  overflow: visible;
+  margin-bottom: 45px; /* Increased margin to prevent overlap with recommendations */
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom thresholds for gas sensors */
+.sensor-gauge.custom-thresholds {
+  height: 12px;
+  background: #e0e0e0;
+}
+
+.gauge-fill {
+  height: 100%;
+  transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.5s ease;
+  border-radius: 6px;
+}
+
+/* Threshold markers */
+.threshold-marker {
+  position: absolute;
+  top: -4px;
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+  z-index: 5;
+  transform: translateX(-50%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.threshold-marker::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: inherit;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.gauge-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #95a5a6;
+  padding: 0 2px;
+  margin-top: 6px;
+  height: 40px; /* Increased height for the scale area */
+  position: relative;
+}
+
+.gauge-scale > span {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.gauge-scale > span:first-child {
+  left: 0;
+  transform: translateX(0);
+}
+
+.gauge-scale > span:last-child {
+  right: 0;
+  transform: translateX(0);
+}
+
+/* Gauge labels for different ranges - Fixed positioning */
+.gauge-label-low, .gauge-label-optimal, .gauge-label-high,
+.gauge-label-safe, .gauge-label-caution, .gauge-label-danger,
+.gauge-label-normal, .gauge-label-elevated, .gauge-label-moderate,
+.gauge-label-very-low, .gauge-label-unhealthy, .gauge-label-dangerous,
+.gauge-label-hazardous {
+  position: absolute;
+  font-weight: 600;
+  transform: translateX(-50%);
+  top: 18px; /* Adjusted position */
+  font-size: 11px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2px 4px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+/* Add label adjustments for first and last markers to prevent collision with scale values */
+.gauge-scale span.gauge-label-low:first-of-type,
+.gauge-scale span.gauge-label-very-low:first-of-type,
+.gauge-scale span.gauge-label-normal:first-of-type,
+.gauge-scale span.gauge-label-safe:first-of-type {
+  left: 10% !important; /* Move first threshold label slightly right */
+}
+
+.gauge-scale span.gauge-label-high:last-of-type,
+.gauge-scale span.gauge-label-hazardous:last-of-type,
+.gauge-scale span.gauge-label-dangerous:last-of-type {
+  left: 90% !important; /* Move last threshold label slightly left */
+}
+
+.gauge-label-safe { color: #2ecc71; }
+.gauge-label-normal { color: #2ecc71; }
+.gauge-label-very-low { color: #2ecc71; }
+.gauge-label-elevated { color: #2ecc71; }
+.gauge-label-low { color: #3498db; }
+
+.gauge-label-caution { color: #f39c12; }
+.gauge-label-moderate { color: #f39c12; }
+.gauge-label-optimal { color: #2ecc71; }
+
+.gauge-label-danger { color: #e74c3c; }
+.gauge-label-high { color: #e74c3c; }
+.gauge-label-unhealthy { color: #e74c3c; }
+.gauge-label-dangerous { color: #c0392b; }
+.gauge-label-hazardous { color: #e74c3c; }
+
+/* Sensor recommendation styling - fix spacing */
+.sensor-recommendation {
+  margin-top: 5px; /* Adjusted spacing */
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #34495e;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
+/* Sensor details containers */
+.sensor-details-container {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border-left: 3px solid #e67e22;
+  font-size: 0.9rem;
+}
+
+.sensor-recommendation, .sensor-exposure-time, .sensor-health-effects {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.sensor-recommendation strong, .sensor-exposure-time strong, .sensor-health-effects strong {
+  color: #34495e;
+}
+
+.sensor-exposure-time {
+  color: #16a085;
+  font-weight: 500;
+}
+
+.sensor-health-effects {
+  color: #7f8c8d;
+}
+
+/* Improved tooltip styles */
+.threshold-marker:hover::before {
+  content: attr(title);
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background-color: rgba(44, 62, 80, 0.95);
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: max-content;
+  max-width: 200px;
+}
+
+/* Enhanced Recommendations section */
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.recommendation-section {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.recommendations {
+  padding-left: 0;
+  margin-top: 0;
+  color: #34495e;
+  list-style-type: none;
+}
+
+.recommendations li {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  position: relative;
+  padding: 0.8rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #3498db;
+  transition: all 0.3s ease;
+}
+
+.recommendations li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations li strong {
+  color: #2c3e50;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.exposure-note {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #16a085;
+  font-style: italic;
+}
+
+.critical-alert {
+  background-color: rgba(231, 76, 60, 0.1) !important;
+  border-left: 4px solid #e74c3c !important;
+  box-shadow: 0 3px 6px rgba(231, 76, 60, 0.2) !important;
+  animation: pulse-border 2s infinite;
+}
+
+.critical-alert strong {
+  color: #e74c3c !important;
+}
+
+@keyframes pulse-border {
+  0% { border-left-color: #e74c3c; }
+  50% { border-left-color: rgba(231, 76, 60, 0.6); }
+  100% { border-left-color: #e74c3c; }
+}
+
+/* Gas Reference Tables Section */
+.gas-reference-container {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gas-reference-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #34495e;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 0.8rem;
+}
+
+.gas-reference-tables {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.gas-reference-table {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.gas-reference-table h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #34495e;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 0.5rem;
+}
+
+.gas-reference-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.gas-reference-table th {
+  padding: 0.8rem;
+  text-align: left;
+  background-color: #ecf0f1;
+  color: #34495e;
+  font-weight: 600;
+  border-bottom: 2px solid #bdc3c7;
+}
+
+.gas-reference-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.gas-reference-table tr:last-child td {
+  border-bottom: none;
+}
+
+.gas-reference-table .safe-row {
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.gas-reference-table .caution-row {
+  background-color: rgba(241, 196, 15, 0.1);
+}
+
+.gas-reference-table .warning-row {
+  background-color: rgba(243, 156, 18, 0.1);
+}
+
+.gas-reference-table .danger-row {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+.gas-reference-table tr:hover {
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+/* Source reference styling */
+.reference-source {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  font-style: italic;
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+/* Enhanced Gas Information Styles */
+@media (min-width: 992px) {
+  .gas-reference-tables {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Button container to hold both buttons */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 600px; /* Reduced width for better positioning */
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Back button style */
+.back-button {
+  padding: 0.8rem 2rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+}
+
+.back-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+/* Style for the visualization button (left side) */
+.visualization-button {
+  padding: 0.8rem 2rem;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+}
+
+.visualization-button:hover {
+  background-color: #2ecc71;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(46, 204, 113, 0.3);
+}
+
+/* Loading and Error States */
+.loading, .error {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #7f8c8d;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.error {
+  color: #e74c3c;
+  border-left: 4px solid #e74c3c;
+}
+
+/* Card Header Colors */
+.env-data-card h2::after {
+  background-color: #27ae60;
+}
+
+.gas-monitoring-card h2::after {
+  background-color: #e67e22;
+}
+
+.air-quality-card h2::after {
+  background-color: #9b59b6;
+}
+
+.recommendation-card h2::after {
+  background-color: #16a085;
+}
+
+/* Animation for gauge fill */
+@keyframes fillGauge {
+  from { width: 0; }
+  to { width: var(--gauge-width); }
+}
+
+.gauge-fill {
+  animation: fillGauge 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Pulsing effect for critical values */
+@keyframes pulse {
+  0% { opacity: 1; box-shadow: 0 0 0 rgba(231, 76, 60, 0); }
+  50% { opacity: 0.8; box-shadow: 0 0 10px rgba(231, 76, 60, 0.5); }
+  100% { opacity: 1; box-shadow: 0 0 0 rgba(231, 76, 60, 0); }
+}
+
+.sensor-value[style*="#e74c3c"], .sensor-value[style*="#c0392b"] {
+  animation: pulse 2s infinite;
+}
+
+.no-data {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+/* Customized for each gas type */
+.gas-item[data-parameter*="CO"] .sensor-gauge,
+.gas-item[data-parameter*="Carbon Monoxide"] .sensor-gauge {
+  background: linear-gradient(to right, 
+    rgba(46, 204, 113, 0.2) 0%, 
+    rgba(46, 204, 113, 0.2) 25%, /* 0-1 ppm Safe */
+    rgba(46, 204, 113, 0.2) 25%, 
+    rgba(46, 204, 113, 0.2) 50%, /* 1-5 ppm Safe */
+    rgba(243, 156, 18, 0.2) 50%, 
+    rgba(243, 156, 18, 0.2) 75%, /* 6-9 ppm Caution */
+    rgba(231, 76, 60, 0.2) 75%, 
+    rgba(231, 76, 60, 0.2) 100% /* 10-35 ppm Moderate Risk */
+  );
+}
+
+.gas-item[data-parameter*="H₂S"] .sensor-gauge,
+.gas-item[data-parameter*="Hydrogen Sulfide"] .sensor-gauge {
+  background: linear-gradient(to right, 
+    rgba(46, 204, 113, 0.2) 0%, 
+    rgba(46, 204, 113, 0.2) 33%, /* 0-0.5 ppm Safe */
+    rgba(243, 156, 18, 0.2) 33%, 
+    rgba(243, 156, 18, 0.2) 66%, /* 0.5-10 ppm Caution/Moderate */
+    rgba(231, 76, 60, 0.2) 66%, 
+    rgba(231, 76, 60, 0.2) 100% /* 10-15 ppm Hazardous */
+  );
+}
+
+.gas-item[data-parameter*="CH₄"] .sensor-gauge,
+.gas-item[data-parameter*="Methane"] .sensor-gauge {
+  background: linear-gradient(to right, 
+    rgba(46, 204, 113, 0.2) 0%, 
+    rgba(46, 204, 113, 0.2) 30%, /* 0-2 ppm Normal */
+    rgba(46, 204, 113, 0.2) 30%, 
+    rgba(46, 204, 113, 0.2) 50%, /* 2-5 ppm Elevated */
+    rgba(243, 156, 18, 0.2) 50%, 
+    rgba(243, 156, 18, 0.2) 70%, /* 5-10 ppm Moderate */
+    rgba(231, 76, 60, 0.2) 70%, 
+    rgba(231, 76, 60, 0.2) 100% /* 10-35 ppm High */
+  );
+}
+
+.gas-item[data-parameter*="NH₃"] .sensor-gauge,
+.gas-item[data-parameter*="Ammonia"] .sensor-gauge {
+  background: linear-gradient(to right, 
+    rgba(46, 204, 113, 0.2) 0%, 
+    rgba(46, 204, 113, 0.2) 30%, /* 0-0.1 ppm Very Low */
+    rgba(46, 204, 113, 0.2) 30%, 
+    rgba(46, 204, 113, 0.2) 50%, /* 0.1-1 ppm Low */
+    rgba(241, 196, 15, 0.2) 50%, 
+    rgba(241, 196, 15, 0.2) 75%, /* 1-5 ppm Moderate */
+    rgba(231, 76, 60, 0.2) 75%, 
+    rgba(231, 76, 60, 0.2) 100% /* 5-10 ppm High */
+  );
+}
+
+/* Added specific styles to ensure first and last scale values are properly positioned */
+.gauge-scale > span:first-child {
+  left: 0;
+  transform: translateX(0);
+  text-align: left;
+}
+
+.gauge-scale > span:last-child {
+  right: 0;
+  transform: translateX(0);
+  text-align: right;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  
+  .weather-card {
+    grid-column: span 4;
+    grid-row: 1;
+  }
+  
+  .env-data-card {
+    grid-column: span 8;
+    grid-row: 1;
+  }
+  
+  .air-quality-card {
+    grid-column: span 4;
+    grid-row: 2;
+  }
+  
+  .gas-monitoring-card {
+    grid-column: span 8;
+    grid-row: 2;
+  }
+  
+  .recommendation-card {
+    grid-column: span 12;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 992px) {
+  .weather-card {
+    grid-column: span 6;
+  }
+  
+  .env-data-card {
+    grid-column: span 6;
+  }
+  
+  .air-quality-card {
+    grid-column: span 6;
+  }
+  
+  .gas-monitoring-card {
+    grid-column: span 6;
+  }
+  
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .weather-card, .env-data-card, .gas-monitoring-card, .air-quality-card, .recommendation-card {
+    grid-column: 1;
+  }
+  
+  .weather-card {
+    grid-row: 1;
+  }
+  
+  .env-data-card {
+    grid-row: 2;
+  }
+  
+  .air-quality-card {
+    grid-row: 3;
+  }
+  
+  .gas-monitoring-card {
+    grid-row: 4;
+  }
+  
+  .recommendation-card {
+    grid-row: 5;
+  }
+  
+  .sensor-parameters, .gas-parameters {
+    grid-template-columns: 1fr;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .visualization-button,
+  .back-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .weather-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .weather-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .weather-data p {
+    flex-direction: column;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .label {
+    margin-bottom: 0.3rem;
+  }
+  
+  .dashboard-container h1 {
+    font-size: 1.8rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  .sensor-details-container {
+    font-size: 0.8rem;
+  }
+  
+  .gauge-scale {
+    font-size: 0.7rem;
+  }
+  
+  .gauge-label-low, .gauge-label-optimal, .gauge-label-high,
+  .gauge-label-safe, .gauge-label-caution, .gauge-label-danger,
+  .gauge-label-normal, .gauge-label-elevated, .gauge-label-moderate,
+  .gauge-label-very-low, .gauge-label-unhealthy, .gauge-label-dangerous {
+    font-size: 9px;
+  }
+  
+  .gas-reference-table::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .gas-reference-table::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .gas-reference-table::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 4px;
+  }
+  
+  .gas-reference-table::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6;
+  }
+  
+  .sensor-gauge {
+    margin-bottom: 50px; /* Extra space for threshold labels on small screens */
+  }
+  
+  .gauge-scale {
+    height: 45px;
+  }
+}
